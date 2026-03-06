@@ -126,8 +126,10 @@ function fmt(n) {
 function fmtNum(n){ return parseCOPValue(n); }
 
 function App() {
-  const [sheetId,    setSheetId]    = useState(()=>localStorage.getItem("msj_sid")||"");
-  const [sheetName,  setSheetName]  = useState(()=>localStorage.getItem("msj_sname")||"Hoja1");
+  const SHEET_ID   = "1gxb93yeKO-xrermo8pWRlrMztn49rHESJD-pH8pYJzc";
+  const SHEET_NAME = "Base de Datos";
+  const [sheetId,    setSheetId]    = useState(SHEET_ID);
+  const [sheetName,  setSheetName]  = useState(SHEET_NAME);
   const [products,   setProducts]   = useState([]);
   const [loading,    setLoading]    = useState(false);
   const [error,      setError]      = useState("");
@@ -136,9 +138,9 @@ function App() {
   const [category,   setCategory]   = useState("all");
   const [quote,      setQuote]      = useState([]);
   const [showQuote,  setShowQuote]  = useState(false);
-  const [showCfg,    setShowCfg]    = useState(!localStorage.getItem("msj_sid"));
-  const [cfgId,      setCfgId]      = useState(()=>localStorage.getItem("msj_sid")||"");
-  const [cfgName,    setCfgName]    = useState(()=>localStorage.getItem("msj_sname")||"Hoja1");
+  const [showCfg,    setShowCfg]    = useState(false);
+  const [cfgId,      setCfgId]      = useState("1gxb93yeKO-xrermo8pWRlrMztn49rHESJD-pH8pYJzc");
+  const [cfgName,    setCfgName]    = useState("Base de Datos");
   const [csvText,    setCsvText]    = useState("");
   const [showCsv,    setShowCsv]    = useState(false);
   const [client,     setClient]     = useState("");
